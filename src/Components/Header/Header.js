@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './header.scss';
 
 const ColorInput = (props) => {
 
@@ -58,18 +59,20 @@ class Header extends Component {
 
     return (
       <div className="Header">
-        <ColorInput
-          color={color}
-          changeColor={changeColor}
-        />
-        <UrlInput
-          websiteUrl={websiteUrl}
-          changeUrl={changeUrl}
-        />
-        <PaddingInput
-          padding={padding}
-          changePadding={changePadding}
-        />
+        <div className="Header--inner">
+          <ColorInput
+            color={color}
+            changeColor={changeColor}
+          />
+          <UrlInput
+            websiteUrl={websiteUrl}
+            changeUrl={changeUrl}
+          />
+          <PaddingInput
+            padding={padding}
+            changePadding={changePadding}
+          />
+        </div>
       </div>
     )    
   };
