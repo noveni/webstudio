@@ -1,0 +1,29 @@
+@import '~reset-css/sass/reset';
+
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 62.5%; /* 1rem = 10px */
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+}
+
+#root {
+	height: 100%;
+}
+
+.App {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.ViewWrapper {
+	flex: 1 0 auto;
+	
+}
