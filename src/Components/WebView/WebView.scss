@@ -1,0 +1,31 @@
+.ViewWrapperBox {
+	height: 0;
+  overflow: hidden;
+  // padding-top: 100%;
+  position: relative;
+}
+
+.ViewWrapperBoxInside {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.ViewWrapperOuter {
+	flex: 1 0 auto;	
+}
+
+.ViewWrapper {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+iframe {
+	// transform: scale(0.62);
+	// width: 160%;
+	// height: 160%;
+	// margin-left: -30%;
+	// margin-top: -30%;
+}

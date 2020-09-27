@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Presets from '../Presets/Presets';
 import './header.scss';
 
 const ColorInput = (props) => {
@@ -52,14 +53,20 @@ class Header extends Component {
       websiteUrl,
       color,
       padding,
+      presetValue,
       changeColor,
       changeUrl,
       changePadding,
+      changePreset,
     } = this.props;
 
     return (
       <div className="Header">
         <div className="Header--inner">
+          <Presets
+            presetValue={presetValue}
+            onPresetChange={changePreset}
+          />
           <ColorInput
             color={color}
             changeColor={changeColor}

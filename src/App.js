@@ -1,46 +1,22 @@
 import React, { Component } from 'react';
 
-import Header from './Components/Header/Header'
-
-
-const Webview = (props) => {
-  return (
-    <iframe
-      title="Website Preview"
-      width="100%"
-      height="100%"
-      src={props.url}
-    >
-    </iframe>
-  );
-}
-
-const ViewWrapper = (props) => {
-
-
-  const viewWrapperStyles = {
-    padding: props.padding
-  }
-  return (
-    <div className="ViewWrapper" style={viewWrapperStyles}>
-      {props.children}
-    </div>
-  )
-}
-
+import Header from './Components/Header/Header';
+import WebView from './Components/WebView/WebView';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       siteUrl: 'https://ecrannoir.be',
-      color: "#ffffff",
+      color: "#EECC90",
       padding: "20px",
+      presetValue: 'none',
     };
 
     this.handleChangeUrl = this.handleChangeUrl.bind(this);
     this.handleChangeColor = this.handleChangeColor.bind(this);
-    this.handlerChangePadding = this.handlerChangePadding.bind(this);
+    this.handleChangePadding = this.handleChangePadding.bind(this);
+    this.handleChangePreset = this.handleChangePreset.bind(this);
   }
 
   handleChangeUrl(e) {
@@ -53,30 +29,35 @@ class App extends Component {
     this.setState({color: e.target.value})
   }
 
-  handlerChangePadding(e) {
+  handleChangePadding(e) {
     e.preventDefault();
     this.setState({padding:  e.target.value})
   }
 
-  render() {
+  handleChangePreset(presetValue) {
+    this.setState({presetValue: presetValue})
+  }
 
-    const wrapperStyles = {
-      backgroundColor: this.state.color,
-    }
+  render() { 
 
     return (
-      <div className="App" style={wrapperStyles}>
+      <div className="App">
         <Header
           websiteUrl={this.state.siteUrl}
           color={this.state.color}
           padding={this.state.padding}
+          presetValue={this.state.presetValue}
           changeColor={this.handleChangeColor}
           changeUrl={this.handleChangeUrl}
-          changePadding={this.handlerChangePadding}
+          changePadding={this.handleChangePadding}
+          changePreset={this.handleChangePreset}
         />
-        <ViewWrapper padding={this.state.padding}>
-            <Webview url={this.state.siteUrl} />
-        </ViewWrapper>
+        <WebView
+          websiteUrl={this.state.siteUrl}
+          color={this.state.color}
+          padding={this.state.padding}
+          presetValue={this.state.presetValue}
+        />
       </div>
     )    
   };
