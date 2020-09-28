@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import Header from './Components/Header/Header';
+import Menu from './Components/Menu/Menu';
 import WebView from './Components/WebView/WebView';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      siteUrl: 'https://ecrannoir.be',
+      siteUrl: 'https://www.paloma-latelier.be/',
       color: "#EECC90",
-      padding: "20px",
+      padding: "80px",
       presetValue: 'none',
     };
 
@@ -42,7 +42,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header
+        <Menu
           websiteUrl={this.state.siteUrl}
           color={this.state.color}
           padding={this.state.padding}

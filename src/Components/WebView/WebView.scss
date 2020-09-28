@@ -1,31 +1,87 @@
-.ViewWrapperBox {
-	height: 0;
-  overflow: hidden;
-  // padding-top: 100%;
-  position: relative;
-}
-
-.ViewWrapperBoxInside {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-}
-
-.ViewWrapperOuter {
-	flex: 1 0 auto;	
-}
-
 .ViewWrapper {
 	height: 100%;
 	box-sizing: border-box;
+	// overflow: hidden;
 }
 
-iframe {
+.ViewWrapperBox {
+	// height: 0;
+  // overflow: hidden;
+	// // padding-top: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	&::before {
+		content: "";
+		display: block;
+		// width: 1px;
+		// margin-left: -1px;
+		// float: left;
+		// height: 0;
+		// padding-top: 591.44px / 1127.34px * 100%;
+	}
+	
+	// &::after {
+	// 	content: "";
+	// 	display: table;
+	// 	clear: both;
+	// }
+	> :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+
+	&.preset-11::before {
+		padding-top: 100%;
+	}
+
+	&.preset-169::before {
+		padding-top: 56.25%;
+	}
+
+	&.preset-43::before {
+		padding-top: 75%;
+	}
+}
+
+// .ViewWrapperBoxInside {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	bottom: 0;
+// 	right: 0;
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+.ViewWrapperOuter {
+	flex: 1 0 auto;
+}
+
+
+
+.IframeInner {
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 0px 12px 1px rgba(5, 5, 5, 0.3);
 	// transform: scale(0.62);
 	// width: 160%;
 	// height: 160%;
 	// margin-left: -30%;
 	// margin-top: -30%;
+}
+
+.IframeWrapper {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
 }

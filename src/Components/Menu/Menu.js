@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Presets from '../Presets/Presets';
-import './header.scss';
+import './Menu.scss';
 
 const ColorInput = (props) => {
 
@@ -44,7 +44,7 @@ const PaddingInput = (props) => {
 }
 
 
-class Header extends Component {
+class Menu extends Component {
 
 
   render() {
@@ -61,8 +61,8 @@ class Header extends Component {
     } = this.props;
 
     return (
-      <div className="Header">
-        <div className="Header--inner">
+      <div className="Menu">
+        <div className="Menu--inner">
           <Presets
             presetValue={presetValue}
             onPresetChange={changePreset}
@@ -85,4 +85,4 @@ class Header extends Component {
   };
 }
 
-export default Header;
+export default Menu;

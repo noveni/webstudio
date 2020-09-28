@@ -1,20 +1,22 @@
-.Header {
-	width: 100%;
+.Menu {
+	// width: 100%;
 	border-bottom: 1px solid #CCC;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	background-color: #fff;
+
+	// flex: 0 1 30%;
 	
 }
 
-.Header--inner {
-	max-width: 980px;
+.Menu--inner {
 	margin: 0 auto;
 	display: flex;
+	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 
 	> div {
-		padding: 0 3rem;
+		margin-bottom: 2rem;
 	}
 }
